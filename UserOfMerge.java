@@ -4,7 +4,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class UserOfMerge.java {
+public class UserOfMerge {
     
     public static void main(String[] commandLine) {
         ArrayList< String> cards = new ArrayList< String>(
