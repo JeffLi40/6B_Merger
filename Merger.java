@@ -54,7 +54,7 @@ public void merge(
             nextIndex0++;
         }
     }
-    UsersData = list;
+    usersData = list;
 }
 
 
