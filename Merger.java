@@ -47,7 +47,7 @@ public void merge(
             nextToPlace++;
             nextIndex1++;
         }
-     else {
+     
         while (nextIndex0 < start1) {
             list.set(nextToPlace, usersData.get(nextIndex0));
             nextToPlace++;
