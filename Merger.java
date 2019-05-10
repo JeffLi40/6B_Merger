@@ -41,19 +41,19 @@ public void merge(
         }
         nextToPlace++;
     }
-    if (nextIndex0 == start1) {
+
         while (nextIndex1 < end1) {
             list.set(nextToPlace, usersData.get(nextIndex1));
             nextToPlace++;
             nextIndex1++;
         }
-    } else {
+     else {
         while (nextIndex0 < start1) {
             list.set(nextToPlace, usersData.get(nextIndex0));
             nextToPlace++;
             nextIndex0++;
         }
-    }
+    
     usersData = list;
 }
 
