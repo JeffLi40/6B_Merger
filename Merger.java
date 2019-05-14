@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Merger {
 
-    ArrayList<String> usersData;
+    private ArrayList<String> usersData;
 
     /**
       Construct an instance from a list of data
@@ -16,6 +16,7 @@ public class Merger {
         usersData = list;
     }
 
+    public int size() {return usersData.size();}
 
     /**
       Merge the sorted sub-lists.
@@ -27,11 +28,14 @@ public void merge(
     // = just past end of list0
     , int end1 // index past end of list1
 ) {
-    ArrayList < String > list = usersData;
+    ArrayList < String > list = new ArrayList< String>(usersData);
     int nextIndex0 = start0;
     int nextIndex1 = start1;
     int nextToPlace = start0;
     while (nextIndex0 < start1 && nextIndex1 < end1) {
+        System.out.println( "nextIndex0: " + nextIndex0 + " ;; nextIndex1: " + nextIndex1);
+        System.out.println( "@nextIndex0: " + usersData.get(nextIndex0) + " ;; @nextIndex1: " + usersData.get(nextIndex1));
+        System.out.println( "nextToPlace: " + nextToPlace);
         if (usersData.get(nextIndex0).compareTo(usersData.get(nextIndex1)) < 0) {
             list.set(nextToPlace, usersData.get(nextIndex0));
             nextIndex0++;
@@ -40,6 +44,7 @@ public void merge(
             nextIndex1++;
         }
         nextToPlace++;
+        System.out.println( "list: " + list.toString());
     }
 
         while (nextIndex1 < end1) {
@@ -47,13 +52,13 @@ public void merge(
             nextToPlace++;
             nextIndex1++;
         }
-     
+
         while (nextIndex0 < start1) {
             list.set(nextToPlace, usersData.get(nextIndex0));
             nextToPlace++;
             nextIndex0++;
         }
-    
+
     usersData = list;
 }
 
@@ -62,11 +67,11 @@ public void merge(
       @return a string representation of the user's data
      */
     public String toString() {
-        return "" + usersData; 
+        return "" + usersData;
     }
 
-    
-    /** 
+
+    /**
       @return the boolean value of the statement
          "the data in the range are in ascending order"
      */
@@ -76,7 +81,7 @@ public void merge(
            ; i++
            )
             if( usersData.get(i).compareTo( usersData.get(i+1)) > 0) {
-                System.out.println( "trouble between position " + i 
+                System.out.println( "trouble between position " + i
                                   + ", which holds " + usersData.get(i)
                                   + ", and position " + (i +1)
                                   + ", which holds " + usersData.get(i +1)
